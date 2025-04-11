@@ -1,0 +1,6 @@
+@Zentry_HostAddress = http://localhost:5063
+
+GET {{Zentry_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
