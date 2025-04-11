@@ -8,10 +8,15 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Zentry.Application\Zentry.Application.csproj" />
+      <ProjectReference Include="..\Zentry.Infrastructure\Zentry.Infrastructure.csproj" />
     </ItemGroup>
 
     <ItemGroup>
