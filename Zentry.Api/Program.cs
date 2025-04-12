@@ -1,19 +1,24 @@
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Zentry.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-
 builder.Services.AddControllers();
 
-builder.Services.AddOpenApi();
+// Настройка MediatR
+builder.Services.AddMediatR(typeof(Program).Assembly);
 
+// Настройка DbContext
 builder.Services.AddDbContext<ZentryDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-var app = builder.Build();
+builder.Configuration
+    .AddJsonFile("appsettings.json")
+    .AddUserSecrets<Program>() 
+    .AddEnvironmentVariables();
 
+var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
