@@ -1,12 +1,9 @@
-using System.Reflection;
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Zentry.Application.Features.Booking.Commands.CreateBooking;
 using Zentry.Domain.Interfaces;
 using Zentry.Infrastructure.Persistence;
-using Zentry.Infrastructure.Persistence.Seeders;
 using Zentry.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -43,8 +40,8 @@ var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<ZentryDbContext>();
-    await DbSeeder.SeedAsync(dbContext);
+    var db = scope.ServiceProvider.GetRequiredService<ZentryDbContext>();
+    await ZentryDbContextSeeder.SeedAsync(db);
 }
 
 if (app.Environment.IsDevelopment())

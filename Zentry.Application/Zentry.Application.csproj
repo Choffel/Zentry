@@ -2,11 +2,16 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Zentry.Domain\Zentry.Domain.csproj" />
+    <ProjectReference Include="..\Zentry.Infrastructure\Zentry.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.11.0" />
     <PackageReference Include="MediatR" Version="12.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Employee\Commands\" />
   </ItemGroup>
 
   <PropertyGroup>

@@ -1,13 +1,29 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace Zentry.Domain.Entities;
 
 public class Employee
 {
+    [Key]
     public Guid Id { get; set; }
-    public string FirstName { get; set; } = null!;
-    public string LastName { get; set; } = null!;
-    public Guid BusinessId { get; set; }
-    public Business Business { get; set; } = null!;
 
-    public List<Service> Services { get; set; } = new();
-    public List<Booking> Bookings { get; set; } = new();
+    [Required]
+    [MaxLength(100)]
+    public string FullName { get; set; }
+
+    [Required]
+    [EmailAddress]
+    public string Email { get; set; }
+
+    [Required]
+    [Phone]
+    public string PhoneNumber { get; set; }
+
+    [Required]
+    public Guid UserId { get; set; }
+    
+    public User User { get; set; }
+    
+    public ICollection<Booking> Bookings { get; set; }
 }
