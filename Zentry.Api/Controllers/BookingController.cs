@@ -21,7 +21,7 @@ public class BookingController : Controller
 
 
     [HttpPost]
-    public async Task<IActionResult> Create(CreateBookingDto dto)
+    public async Task<IActionResult> Create([FromBody] CreateBookingDto dto)
     {
         var command = new CreateBookingCommand(dto);
         var result = await _mediator.Send(command);

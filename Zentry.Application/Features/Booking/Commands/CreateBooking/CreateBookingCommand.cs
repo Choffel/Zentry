@@ -19,5 +19,6 @@ public class CreateBookingCommand : IRequest<Guid>
         EmployeeId = dto.EmployeeId;
         StartTime = dto.AppointmentTime;
         EndTime = dto.AppointmentTime.AddHours(1);
+        UserId = dto.UserId;
     }
 }
