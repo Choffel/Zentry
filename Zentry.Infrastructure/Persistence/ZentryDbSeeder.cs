@@ -14,7 +14,7 @@ public static class ZentryDbContextSeeder
             {
                 Id = Guid.NewGuid(),
                 Email = "test@example.com",
-                Phone = "1234567890"
+                PhoneNumber = "1234567890"
             };
 
             var employee = new Employee

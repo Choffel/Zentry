@@ -12,7 +12,7 @@ using Zentry.Infrastructure.Persistence;
 namespace Zentry.Infrastructure.Migrations
 {
     [DbContext(typeof(ZentryDbContext))]
-    [Migration("20250415214409_Update")]
+    [Migration("20250416131537_Update")]
     partial class Update
     {
         /// <inheritdoc />

@@ -29,11 +29,19 @@ public class BookingController : Controller
         return Ok(result);
     }
 
-    [HttpGet]
+    [HttpGet("Bookings")]
     public async Task<IActionResult> GetBooking()
     {
         var result = await _context.Bookings.ToListAsync();
         
+        return Ok(result);
+    }
+
+    [HttpGet("Service")]
+    public async Task<IActionResult> GetService()
+    {
+        var result = await _context.Services.ToListAsync();
+         
         return Ok(result);
     }
 }
