@@ -54,11 +54,7 @@ builder.Services.AddIdentity<User, IdentityRole<Guid>>(options =>
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<ZentryDbContext>();
-    await ZentryDbContextSeeder.SeedAsync(db);
-}
+
 
 if (app.Environment.IsDevelopment())
 {

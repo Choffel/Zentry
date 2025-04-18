@@ -7,20 +7,19 @@ public class RegisterUserCommand : IRequest<Guid>
 {
     public string Email { get; set; }
     public string Password { get; set; }
-    public string Role { get; set; } = "Client";
+    
 
 
-    public RegisterUserCommand(string email, string password, string role)
+    public RegisterUserCommand(string email, string password)
     {
         Email = email;
         Password = password;
-        Role = role;
+        
     }
 
     public RegisterUserCommand(RegisterUserDto dto)
     {
         Email = dto.Email;
         Password = dto.Password;
-        Role = dto.Role;
     }
 }
