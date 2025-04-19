@@ -2,6 +2,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Zentry.Application.DTOs.Identity;
+using Zentry.Application.Features.Auth.Commands.Login;
 using Zentry.Application.Features.Auth.Commands.RegisterUser;
 using Zentry.Infrastructure.Persistence;
 
@@ -30,6 +31,15 @@ public class AccountController : Controller
         return Ok(userId);
     }
 
+    [HttpPost("Login")]
+    public async Task<IActionResult> Login([FromBody] LoginDto dto)
+    {
+        var command = new LoginUserCommand(dto);
+        var token = await _mediator.Send(command);
+
+        return Ok(token);
+    }
+
     [HttpGet("GetUser")]
     public async Task<IActionResult> GetUser()
     {
@@ -37,4 +47,6 @@ public class AccountController : Controller
         
         return Ok(result);
     }
+    
+    
 }

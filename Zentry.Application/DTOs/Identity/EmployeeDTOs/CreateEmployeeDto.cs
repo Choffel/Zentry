@@ -1,4 +1,4 @@
-namespace Zentry.Application.Features.Booking.Commands.CreateEmployee;
+namespace Zentry.Application.DTOs.Identity;
 
 public class CreateEmployeeDto
 {

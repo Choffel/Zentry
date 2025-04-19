@@ -1,5 +1,5 @@
 using MediatR;
-using Zentry.Application.Features.Booking.Commands.CreateEmployee;
+using Zentry.Application.DTOs.Identity;
 
 namespace Zentry.Application.Features.Employee.Commands.CreateEmployee;
 

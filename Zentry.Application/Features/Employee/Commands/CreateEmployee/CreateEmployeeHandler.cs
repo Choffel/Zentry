@@ -1,5 +1,4 @@
 using MediatR;
-using Zentry.Application.Features.Booking.Commands.CreateEmployee;
 using Zentry.Infrastructure.Persistence;
 
 namespace Zentry.Application.Features.Employee.Commands.CreateEmployee;
