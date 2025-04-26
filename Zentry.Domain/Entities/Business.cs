@@ -9,7 +9,7 @@ public class Business
     public User Owner { get; set; } = null!;
     
     public List<Location> Locations { get; set; } = new();
-    public List<Service> Services { get; set; } = new();
+    public List<Company> Services { get; set; } = new();
     public List<Employee> Employees { get; set; } = new();
     public List<Review> Reviews { get; set; } = new();
 }

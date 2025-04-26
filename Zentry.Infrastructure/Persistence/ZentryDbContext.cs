@@ -12,7 +12,8 @@ public class ZentryDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
     }
 
     public DbSet<Business> Businesses => Set<Business>();
-    public DbSet<Service> Services => Set<Service>();
+    public DbSet<Company> Companies => Set<Company>();
+
     public DbSet<Booking> Bookings => Set<Booking>();
     public DbSet<Employee> Employees => Set<Employee>();
     public DbSet<TimeSlot> TimeSlots => Set<TimeSlot>();

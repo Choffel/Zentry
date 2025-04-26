@@ -37,10 +37,10 @@ public class BookingController : Controller
         return Ok(result);
     }
 
-    [HttpGet("Service")]
+    [HttpGet("Company")]
     public async Task<IActionResult> GetService()
     {
-        var result = await _context.Services.ToListAsync();
+        var result = await _context.Companies.ToListAsync();
          
         return Ok(result);
     }
